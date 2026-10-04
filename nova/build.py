@@ -22,7 +22,7 @@ from .data import (
 from .updates import load_updates
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = ROOT / "site"
+SITE = ROOT / "docs"
 
 TEMPLATE_HEAD = """<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">

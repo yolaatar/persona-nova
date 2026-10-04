@@ -4,7 +4,7 @@ Dossier documentaire navigable sur l'état du projet NOVA au 30 septembre 2026, 
 
 ## Ouvrir
 
-- `site/index.html` : le dossier complet, un seul fichier, hors ligne.
+- `docs/index.html` : le dossier complet, un seul fichier, hors ligne.
 - `BRIEF.md` : la reprise en une page.
 
 ## Régénérer
