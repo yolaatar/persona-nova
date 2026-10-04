@@ -287,7 +287,18 @@ def build_site(out: Path = SITE) -> Path:
     page = TEMPLATE_HEAD + body + TEMPLATE_TAIL
     (out / "index.html").write_text(page, encoding="utf-8")
     (ROOT / "BRIEF.md").write_text(brief_md(), encoding="utf-8")
+    (ROOT / "REPONSES.md").write_text(answers_md(), encoding="utf-8")
     return out / "index.html"
+
+
+def answers_md() -> str:
+    lines = ["# Réponses aux dix questions initiales (NOVA)", "",
+             "État au 30 septembre 2026, 09 h 00. Chaque réponse renvoie à un fichier du dépôt (`corpus/Projet360_NOVA_ETUDIANTS/`). Version navigable : https://yolaatar.github.io/persona-nova/", ""]
+    for a in ANSWERS:
+        lines += [f"## {a['q']}. {a['question']}", "", a["answer"], "", f"*Nuance :* {a['nuance']}", "", "**Sources :**"]
+        lines += [f"- `{f}` : « {anc} » ({loc})" for f, anc, loc in a["sources"]]
+        lines.append("")
+    return "\n".join(lines)
 
 
 def brief_html() -> str:
