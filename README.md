@@ -14,6 +14,10 @@ python -m nova.build        # écrit site/index.html et BRIEF.md
 python -m pytest -q         # 117 contrôles
 ```
 
+## Corpus
+
+Le dossier `corpus/Projet360_NOVA_ETUDIANTS/` contient les 64 fichiers du défi. Les données sont fictives (README du défi). Les tests de citations lisent ce dossier ; `NOVA_CORPUS` permet de pointer ailleurs.
+
 ## Contenu
 
 | Élément | Fichier |

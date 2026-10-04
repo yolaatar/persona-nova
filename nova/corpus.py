@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import email
+import os
 import email.policy
 import re
 import subprocess
@@ -11,7 +12,9 @@ from pathlib import Path
 
 import openpyxl
 
-CORPUS = Path(__file__).resolve().parents[2] / "loto-quebec-nova-participants" / "Projet360_NOVA_ETUDIANTS"
+# The corpus ships with the repository (fictional data, see the challenge page).
+# Set NOVA_CORPUS to point elsewhere.
+CORPUS = Path(os.environ.get("NOVA_CORPUS", Path(__file__).resolve().parents[1] / "corpus" / "Projet360_NOVA_ETUDIANTS"))
 
 
 def _norm(text: str) -> str:
